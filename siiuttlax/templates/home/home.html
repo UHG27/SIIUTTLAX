@@ -1,8 +1,28 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SIIUTTLAX{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
 
-{% block title %}Home{% endblock %}
+<body>
+    <header>
+        <h1>Sistema Integral de Información de la UTT</h1>
+        <h2>SIIUTTLAX</h2>
+    </header>
 
-{% block content %}
-<h1>Sistema integral de Informacion de la UTT</h1>
-<h2>SIIUTTLAX</h2>
-{% endblock %}
+    <main>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; {% now "Y" %} Universidad Tecnológica de Tlaxcala</p>
+    </footer>
+</body>
+</html>
