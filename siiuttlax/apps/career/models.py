@@ -18,7 +18,7 @@ class Career(models.Model):
     plan = models.CharField(max_length=4)
 
     def __str__(self):
-        return f"{ self.level } - { self.short_name }"
+        return self.short_name
     class Meta:
         verbose_name = "Carrera"
         verbose_name_plural = "Carreras"
@@ -26,14 +26,14 @@ class Career(models.Model):
 
 class Subject(models.Model):
     name = models.CharField(max_length=100)
-    Career = models.ForeignKey(Career, on_delete=models.CASCADE)
+    career = models.ForeignKey(Career, on_delete=models.CASCADE)
     semester = models.IntegerField()
     total_hours = models.IntegerField()
     weekly_hours = models.IntegerField()
     file = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{ self.level } - { self.short_name }"
+        return f"{ self.name } - { self.Career }"
     class Meta:
         verbose_name = "Materia"
         verbose_name_plural = "Materias"
