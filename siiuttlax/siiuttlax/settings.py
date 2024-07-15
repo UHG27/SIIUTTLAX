@@ -16,12 +16,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -153,10 +147,3 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-cloudinary.config(
-    cloud_name = str(os.getenv('CLOUD_NAME')),
-    api_key = str(os.getenv('API_KEY')),
-    api_secret = str(os.getenv('API_SECRET')),
-    secure = True
-)
