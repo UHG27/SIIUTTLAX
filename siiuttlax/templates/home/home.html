@@ -1,51 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}SIIUTTLAX{% endblock %}</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-
-<body>
-    <header>
-        <h1>Sistema Integral de Información de la UTT</h1>
-        <h2>SIIUTTLAX</h2>
-    </header>
-
-    <main>
-        <div class="content">
-            {% block content %}
-            
-            {% endblock %}
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; {% now "Y" %} Universidad Tecnológica de Tlaxcala</p>
-    </footer>
-</body>
-</html>
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>Sistema Integral de Informacion de la UT Tlaxcala</h1>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-{% if user.is_authenticated %}
+<div class="main-content">
+    <h1>BIENVENIDO A SIIUTTLAX </h1>
 
-<h2>Welcome {{ user }}</h2>
-<h3>Yo soy {{ type_user }}</h3>
+    {% if user.is_authenticated %}
+        <h2>Welcome {{ user }}</h2>
+        <h3>Yo soy {{ type_user }}</h3>
 
-<form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value ="Salir">
-</form>
-{% else %}
-<a href="{% url 'login' %}">Login</a>
-{% endif %}
-
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Salir">
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+</div>
 {% endblock %}
-

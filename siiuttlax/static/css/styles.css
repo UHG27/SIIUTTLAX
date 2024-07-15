@@ -1,51 +1,130 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f0f4f3;
     color: #333;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1em 0;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #45a049;
+}
+
+header .logo {
+    height: 40px;
+    margin-right: 10px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-header h2 {
-    margin: 5px 0;
+    margin: 0 auto; /* Centra el título */
     font-size: 1.5em;
-    
+    color: #ffffff;
 }
 
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
+.main-content {
+    max-width: 400px;
+    margin: 50px auto;
     padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.content {
+h1, h2, h3 {
+    color: #4caf50;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.form-control:focus {
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-color: #4caf50;
+}
+
+.btn {
+    padding: 12px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.register-link {
     text-align: center;
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
 }
 
 footer {
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    width: 100%;
+    padding: 0.5em 0; /* Reducir el padding superior e inferior */
     position: fixed;
     bottom: 0;
+    width: 100%;
+    font-size: 0.8em; /* Reducir el tamaño del texto */
 }
