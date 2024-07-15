@@ -1,9 +1,30 @@
 {% extends 'base.html' %}
 
-{% block title %}Career{% endblock %}
+{% block title %}Academy{% endblock %}
 
 {% block content %}
-<h1>Carreras</h1>
-<h2>SIIUTTLAX</h2>
-<p>Ingenierias</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academy</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Professor List</h1>
+    <ul>
+        <li>Professor 1 - Title 1</li>
+        <li>Professor 2 - Title 2</li>
+        <li>Professor 3 - Title 3</li>
+    </ul>
+    <h1>Student List</h1>
+    <ul>
+        <li>Student 1 - Enrollment 1</li>
+        <li>Student 2 - Enrollment 2</li>
+        <li>Student 3 - Enrollment 3</li>
+    </ul>
+
+    <a href="{% url 'home:home'%}">Back to Home</a>
+</body>
+</html>
 {% endblock %}
