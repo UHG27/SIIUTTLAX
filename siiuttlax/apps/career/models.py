@@ -4,7 +4,7 @@ from django.db import models
 class Career(models.Model):
 
     LEVEL_CHOICES = (
-        ('TSU', 'Tecnico Suooeriro'),
+        ('TSU', 'Tecnico Superior'),
         ('Ing', 'Ingenieria'),
         ('Lic', 'Licenciatura'),
         ('M', 'Maestria')
