@@ -3,22 +3,8 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
 <div class="main-content">
-    <h1>BIENVENIDO A SIIUTTLAX </h1>
-
-    {% if user.is_authenticated %}
-        <h2>Welcome {{ user }}</h2>
-        <h3>Yo soy {{ type_user }}</h3>
-
-        <form action="{% url 'logout' %}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Salir">
-        </form>
-    {% else %}
-        <a href="{% url 'login' %}">Login</a>
-    {% endif %}
+    <h1>Welcome, {{ user.username }}!</h1>
+    <p>Yo soy {{ user.first_name }} {{ user.last_name }}</p>
 </div>
 {% endblock %}
