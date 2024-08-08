@@ -1,10 +1,11 @@
 from django.db import models
+from apps.period.models import Semester
 # Create your models here.
 
 class Career(models.Model):
 
     LEVEL_CHOICES = (
-        ('TSU', 'Tecnico Suooeriro'),
+        ('TSU', 'Tecnico Superior'),
         ('Ing', 'Ingenieria'),
         ('Lic', 'Licenciatura'),
         ('M', 'Maestria')
@@ -26,7 +27,7 @@ class Career(models.Model):
 class Subject(models.Model):
     name = models.CharField(max_length=100)
     career = models.ForeignKey(Career, on_delete=models.CASCADE)
-    semester = models.IntegerField()
+    semester = models.ForeignKey(Semester, verbose_name="Cuatrimestre", on_delete=models.CASCADE)
     total_hours = models.IntegerField()
     weekly_hours = models.IntegerField()
     file = models.FileField(
@@ -35,7 +36,7 @@ class Subject(models.Model):
         upload_to='asignaturas/')
 
     def __str__(self):
-        return f"{ self.name } - { self.Career }"
+        return f"{ self.name } - { self.career }"
     class Meta:
         verbose_name = "Materia"
         verbose_name_plural = "Materias"

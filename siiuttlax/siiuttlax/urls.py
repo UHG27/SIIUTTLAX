@@ -19,11 +19,9 @@ from django.urls import path, include
 from apps.home import views as home_views
 
 urlpatterns = [
-<<<<<<< HEAD
+
     path('', include('apps.home.urls')),
-=======
     path('', home_views.home, name='home'),
->>>>>>> Maria
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('academy/', include('apps.academy.urls')),

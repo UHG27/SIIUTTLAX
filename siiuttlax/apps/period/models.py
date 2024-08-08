@@ -11,6 +11,13 @@ class Period(models.Model):
     year = models.CharField(max_length=4)
     cicle = models.CharField(max_length=11, default='2023-2024')
 
+    def __str__(self):
+        return f"{self.period} - {self.year}"
+    
 class Semester(models.Model):
     semester = models.IntegerField()
     semester_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.semester_name
+    
