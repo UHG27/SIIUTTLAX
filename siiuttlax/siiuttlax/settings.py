@@ -48,7 +48,11 @@ INSTALLED_APPS = [
     'apps.career.apps.CareerConfig',
     'apps.period.apps.PeriodConfig',
     'apps.user_profile.apps.UserProfileConfig',
+<<<<<<< HEAD
     'apps.group.apps.GroupConfig',
+=======
+
+>>>>>>> aa42a75626eb48012a3a38bc1a148f84048a763e
 ]
 
 MIDDLEWARE = [
