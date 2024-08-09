@@ -20,7 +20,6 @@ from django.contrib.auth.views import LoginView
 from apps.home import views as home_views
 
 urlpatterns = [
-<<<<<<< HEAD
     path('', include('apps.home.urls')),
     path('', home_views.home, name='home'),
     path('admin/', admin.site.urls),
@@ -30,13 +29,3 @@ urlpatterns = [
     path('period/', include('apps.period.urls')),
 
 ]
-=======
-    path('', home_views.home, name='home'),  # Página de inicio
-    path('admin/', admin.site.urls),  # Administración de Django
-    path('registration/login/', LoginView.as_view(template_name='login.html'), name='login'),  # Login personalizado
-    path('registration/', include('django.contrib.auth.urls')),  # URLs de autenticación (logout, password change, etc.)
-    path('academy/', include('apps.academy.urls')),  # URLs de la app "academy"
-    path('career/', include('apps.career.urls')),  # URLs de la app "career"
-    path('period/', include('apps.period.urls')),  # URLs de la app "period"
-]
->>>>>>> 871cfc5cb10300c595ac1095d41287eb4fc29e02
