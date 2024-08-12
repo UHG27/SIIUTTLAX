@@ -5,26 +5,22 @@ from .forms import ProfessorForm, StudentForm
 #create your views here.
 def create_Professor(request):
     if request.method == 'POST':
-        form = ProfessorForm()
+        form = ProfessorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('academy:create_professor')
+
+    form= ProfessorForm()
     return render(request,
                   'academy/create_professor.html',
-                  {'form':form})
+                  {'form': form})
 
 def create_student(request):
     if request.method == 'POST':
         form = StudentForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            first_name = form.cleaned_data['first_name']
-            password = form.cleaned_data['password']
-            enrollment = form.cleaned_data['enrollment']
-
-            Student.objects.create_user(
-                username=username,
-                first_name=first_name,
-                password=password,
-                enrollment=enrollment
-            )
+            form.save()
+           
             return redirect('academy:create_student')
         
     form = StudentForm()

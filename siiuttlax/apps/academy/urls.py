@@ -8,6 +8,6 @@ urlpatterns = [
           views.create_student,
           name='create_student'),
     path('professor/create', 
-          views.create_student,
+          views.create_Professor,
           name='create_professor'),
 ]
