@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-
+from .models import Student
 from .forms import ProfessorForm, StudentForm
 
 #create your views here.
