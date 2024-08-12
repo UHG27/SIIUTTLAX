@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'apps.career.apps.CareerConfig',
     'apps.period.apps.PeriodConfig',
     'apps.user_profile.apps.UserProfileConfig',
-    'apps.group.apps.GroupConfig',
 ]
 
 MIDDLEWARE = [
@@ -115,3 +114,4 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = '/accounts/login/'

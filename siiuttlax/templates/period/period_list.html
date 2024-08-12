@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Period{% endblock %}
+
+{% block content %}
+<h1>Carreras</h1>
+<h2>SIIUTTLAX</h2>
+<p>Ingenierias</p>
+
+<h2>Agregar Nuevo Periodo</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Agregar</button>
+</form>
+
+<h2>Period</h2>
+<div class="period-container">
+    {% for period in period %}
+        <div class="period">
+            <div class="period-item">
+                <strong>Periodo:</strong> {{ period.period }}
+            </div>
+            <div class="period-item">
+                <strong>Año:</strong> {{ period.year }}
+            </div>
+            <div class="period-item">
+                <strong>Ciclo:</strong> {{ period.cicle }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

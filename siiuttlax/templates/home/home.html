@@ -3,9 +3,18 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<h1>Sistema Integral de Informacion de la UT Tlaxcala</h1>
 
-<div class="main-content">
-    <h1>Welcome, {{ user.username }}!</h1>
-    <p>Yo soy {{ user.first_name }} {{ user.last_name }}</p>
-</div>
+{% if user.is_authenticated %}
+<h2>Bienvenido {{ user }}</h2>
+<h3>Yo soy {{ type_user }}</h3>
+
+<form action="{% url 'logout' %}" method="post" class="logout">
+    {% csrf_token %}
+    <input type="submit" value="Salir">
+</form>
+{% else %}
+<a href="{% url 'login' %}">Login</a>
+{% endif %}
+
 {% endblock %}

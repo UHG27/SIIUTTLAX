@@ -20,11 +20,14 @@ from django.contrib.auth.views import LoginView
 from apps.home import views as home_views
 
 urlpatterns = [
-    path('', home_views.home, name='home'),  # Página de inicio
-    path('admin/', admin.site.urls),  # Administración de Django
-    path('registration/login/', LoginView.as_view(template_name='login.html'), name='login'),  # Login personalizado
-    path('registration/', include('django.contrib.auth.urls')),  # URLs de autenticación (logout, password change, etc.)
-    path('academy/', include('apps.academy.urls')),  # URLs de la app "academy"
-    path('career/', include('apps.career.urls')),  # URLs de la app "career"
-    path('period/', include('apps.period.urls')),  # URLs de la app "period"
+    path('', include('apps.home.urls')),
+    path('', home_views.home, name='home'),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('academy/', include('apps.academy.urls')),
+    path('career/', include('apps.career.urls')),
+    path('period/', include('apps.period.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+
+
 ]

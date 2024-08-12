@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class Career(models.Model):
@@ -30,7 +29,10 @@ class Subject(models.Model):
     semester = models.IntegerField()
     total_hours = models.IntegerField()
     weekly_hours = models.IntegerField()
-    file = models.CharField(max_length=100)
+    file = models.FileField(
+        verbose_name='Archivo', 
+        blank=True, null=True, 
+        upload_to='asignaturas/')
 
     def __str__(self):
         return f"{ self.name } - { self.Career }"
