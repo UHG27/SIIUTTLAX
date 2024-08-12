@@ -6,10 +6,10 @@
 <h1>Sistema Integral de Informacion de la UT Tlaxcala</h1>
 
 {% if user.is_authenticated %}
-<h2>Welcome {{ user }}</h2>
+<h2>Bienvenido {{ user }}</h2>
 <h3>Yo soy {{ type_user }}</h3>
 
-<form action="{% url 'logout' %}" method="post">
+<form action="{% url 'logout' %}" method="post" class="logout">
     {% csrf_token %}
     <input type="submit" value="Salir">
 </form>
